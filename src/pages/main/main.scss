@@ -1,0 +1,46 @@
+.text-hover {
+  transition: all 0.5ms ease;
+}
+.text-hover:hover {
+  color: #71914b;
+}
+
+.btn-hover {
+  transition: all 0.5ms ease;
+}
+
+.btn-hover:hover {
+  background: #ffa496;
+  color: white;
+}
+
+.margin-padding {
+  margin-top: 2vw;
+  padding-top: 2vw;
+  margin-bottom: 2vw;
+  padding-bottom: 2vw;
+}
+.margin-top-padding {
+  margin-top: 5vw;
+  padding-top: 2vw;
+  margin-bottom: 1vw;
+}
+
+@media (max-width: 768px) {
+  .bg {
+    width: 100vw !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw !important;
+  margin: 0 auto;
+  // max-width: 90vw;
+}
