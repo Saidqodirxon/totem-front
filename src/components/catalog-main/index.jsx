@@ -6,12 +6,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./style.scss";
+import { useNavigate } from "react-router-dom";
 
 const CatalogMain = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   // Kategoriyalarni olish
   useEffect(() => {
@@ -126,7 +128,12 @@ const CatalogMain = () => {
                   </div>
                   <div className="product-buttons">
                     <button className="buy-btn">Заказать</button>
-                    <button className="details-btn">Подробнее</button>
+                    <button
+                      className="details-btn"
+                      onClick={() => navigate(`/catalog/${item._id}`)}
+                    >
+                      Подробнее
+                    </button>
                   </div>
                 </div>
               </div>

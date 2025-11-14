@@ -21,7 +21,7 @@ function Algoritm() {
 
   return (
     <>
-      <section className="algoritm">
+      <section className="algoritm" id="algoritm">
         <div className="algoritm__title">
           <h2 className="algoritm__title-text">
             От звонка до разгрузки щебня  на вашем объекте не более 24 часов

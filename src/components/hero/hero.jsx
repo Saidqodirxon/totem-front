@@ -1,7 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import heroImg from "/hero.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleCalcClick = (e) => {
+    // If not on home page, navigate to home with hash so navbar helper can handle it
+    if (location.pathname !== "/") {
+      e.preventDefault();
+      navigate(`/#calc`);
+      return;
+    }
+
+    // If on home page, try to scroll to element with id 'calc'
+    const el = document.getElementById("calc");
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <section
       className="w-full bg-gradient-to-r from-[#1E1E1E] to-[#5A3012] text-white flex flex-col
@@ -27,7 +45,8 @@ const Hero = () => {
 
         <div className="flex flex-col md:flex-row gap-4">
           <Link
-            to="/calc"
+            to="/#calc"
+            onClick={handleCalcClick}
             className="border border-white text-white px-6 py-3 rounded-md text-sm
              md:text-base hover:bg-white hover:text-black transition"
           >
@@ -48,7 +67,7 @@ const Hero = () => {
         <img
           src={heroImg}
           alt="Firefighter"
-          className="w-auto md:max-w-[480px] max-w-[320px] object-contain absolute bottom-0 right-[6vw]"
+          className="hidden md:block w-auto md:max-w-[480px] max-w-[320px] object-contain absolute bottom-0 right-[6vw]"
         />
       </div>
     </section>

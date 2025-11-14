@@ -311,7 +311,10 @@ const CatalogPage = () => {
                         </div>
                         <div className="product-card__buttons">
                           <button>{t("Заказать")}</button>
-                          <button className="secondary">
+                          <button
+                            className="secondary"
+                            onClick={() => navigate(`/catalog/${p._id}`)}
+                          >
                             {t("Подробнее")}
                           </button>
                         </div>

@@ -5,8 +5,11 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import "./style.scss";
+import { useCart } from "../../context/CartContext";
 
 const Footer = () => {
+  const { openCart, getTotalItems } = useCart();
+
   return (
     <footer className="footer">
       <div className="footer__container">
@@ -15,7 +18,9 @@ const Footer = () => {
 
         {/* Yuqori flex qator (tugma + ijtimoiy ikonalar) */}
         <div className="footer__topbar">
-          <button className="footer__btn">Заказать звонок</button>
+          <button className="footer__btn" onClick={openCart}>
+            Заказать звонок
+          </button>
 
           <div className="footer__socials">
             <a href="#">

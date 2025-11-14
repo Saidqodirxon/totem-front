@@ -292,7 +292,7 @@ ${form.delivery || "-"}
   };
 
   return (
-    <section className="calc">
+    <section className="calc" id="calc">
       <h1 className="calc__title">
         Ответьте на 6 вопросов и получите расчёт стоимости
       </h1>
